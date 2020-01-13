@@ -14,8 +14,9 @@ def create_environment_setup(ENV_SIZE_X = 640, ENV_SIZE_Y = 497):
     cv2.line(img, (center_half_x, 0), (center_half_x, ENV_SIZE_Y), color = (255,255,255), thickness=3)
     return img
 
-# def draw_goal_lines(img, ENV_SIZE_X, ENV_SIZE_Y):
-
+# def draw_goal_rectangle(img, ENV_SIZE_X, ENV_SIZE_Y):
+#     cord_1 = (0, center_half_y // 2)
+#     cord_2 = ()
 
 
 class our_player:
@@ -30,7 +31,40 @@ class our_player:
     def draw_player(self, img):
         cv2.circle(img, (self.x, self.y), 2, (0,0,255), 2)
 
-    # def action(self):
+    def action(self, choice):
+        if(choice == 0):
+            # Stay stationary
+            self.move(x=0,y=0)
+        elif(choice == 1):
+            # Move x front
+            self.move(x=1,y=0)
+        elif(choice == 2):
+            # Move y front
+            self.move(x=0,y=1)
+        elif(choice == 3):
+            self.move(x=-1,y=0)
+        elif(choice == 4):
+            self.move(x=0,y=-1)
+        elif(choice == 3):
+            # Move diagonally
+            self.move(x=1,y=1)
+
+    def move(self, x_mov, y_mov):
+        if(can_move(x_mov, y_mov)):
+            self.x += x_mov
+            self.y += y_mov
+        else:
+            self.x -= 1
+            self.y -= 1
+
+    def can_move(self, x_mov=0, y_mov=0):
+        if(self.x + x_mov > ENV_SIZE_X):
+            return False
+        elif(self.y + y_mov > ENV_SIZE_Y):
+            return False
+        else:
+            return True
+
 
 class enemy_player:
     def __init__(self, x = 410, y = 420, player_no = 1):
