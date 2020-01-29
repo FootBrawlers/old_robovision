@@ -1,6 +1,7 @@
 # data folder where the dataset is located
 data/
 Models/__pycache__/
+DRL_Environment/__pycache__/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

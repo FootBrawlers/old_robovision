@@ -30,9 +30,15 @@ class our_player:
             self.move(x_mov=-1,y_mov=0, others=others)
         elif(choice == 4):
             self.move(x_mov=0,y_mov=-1, others=others)
-        elif(choice == 3):
+        elif(choice == 5):
             # Move diagonally
             self.move(x_mov=1,y_mov=1, others=others)
+        # elif(choice == 6):
+        #     # Pass the ball
+
+        # elif(choice == 7):
+        #     # Dribble 
+
 
     def can_move(self, x_mov=0, y_mov=0):
         if(self.x + x_mov > ENV_SIZE_X):

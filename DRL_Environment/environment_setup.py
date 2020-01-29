@@ -12,3 +12,4 @@ def create_environment_setup(ENV_SIZE_X = 640, ENV_SIZE_Y = 497):
     center_half_y = ENV_SIZE_Y // 2
     cv2.line(img, (center_half_x, 0), (center_half_x, ENV_SIZE_Y), color = (255,255,255), thickness=3)
     return img
+
