@@ -10,6 +10,12 @@ def show_squad(squad, img):
     
     return img
 
+# def get_other_players(player_no, player_list):
+# 	if(type == 'our'):
+
+
+# 	elif(type == 'enemy'):
+
 
 def render(img):
     cv2.imshow("image",img)
